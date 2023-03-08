@@ -1,0 +1,390 @@
+!   MOVING_ORIGIN            : 0/1                      [0]                     !Moving Origin
+!   (following 5 keywords are read if MOVING_ORIGIN = 1)
+!   MOVING_ORIGIN_FILE        : char                    []                      !FileName with Trajectory of origin
+!   MOVING_ORIGIN_UNITS        : char                   [Cells]                 !Time Serie given in meters or in cells
+!   MOVING_ORIGIN_COLUMN_X  : int                       []                      !Column to read X coordinate values 
+                                                                                !in Moving Origin file
+!   MOVING_ORIGIN_COLUMN_Y  : int                       []                      !Column to read Y coordinate values 
+                                                                                !in Moving Origin file
+!MOVING_ORIGIN_CLOUD_EMISSION:0/1                       [0]                     !Moving Origin Cloud Emission
+
+IGNORE_ON : 1
+
+<BeginGeneralKeywords>
+OUTPUT_TIME     : 0 10800.
+DT_PARTIC     : 300
+THINWALLS_FILE      : ..\GeneralData\polygons\Land\linhadecostaprsc.xy
+!COASTLINE_FILE      : ..\..\GeneralData\polygons\Land\linhadecostaprsc.xy
+OUTPUT_TRACER_INFO : 1
+<EndGeneralKeywords>
+
+<BeginOrigin>
+GROUP_ID                : 1
+ORIGIN_NAME             : Spill
+
+BEACHING   : 0
+
+NBR_PARTIC : 2000
+
+!MOVING_ORIGIN           : 1
+!MOVING_ORIGIN_FILE      : ..\..\GeneralData\Navio.dat
+!MOVING_ORIGIN_UNITS     : Cells              
+!MOVING_ORIGIN_COLUMN_X  : 2                      
+!MOVING_ORIGIN_COLUMN_Y  : 3 
+
+EMISSION_SPATIAL        : Point
+
+POSITION_COORDINATES : -39.12 -3.23
+EMISSION_TEMPORAL : Instantaneous
+
+!START_PARTIC_EMIT : 2021 06 01 00 0 0
+!STOP_PARTIC_EMIT : 2021 06 05 00 0 0
+
+FLOAT                   : 1
+
+DEPTH_FROM_FREE_SURFACE : 0.
+ADVECTION               : 1
+ADVECTION_Z             : 0
+
+WINDCOEF                : 0.03
+WINDDRIFTCORRECTION     : 0
+WINDDRIFTANGLE          : 0
+
+STOKES_DRIFT            : 1
+STOKES_DRIFT_METHOD     : LonguetHigginsDeep
+
+POINT_VOLUME            : 1.
+FLOW                    : 1.
+
+MOVEMENT                : SullivanAllen
+!VARVELHX                : 0.05
+!VARVELH                 : 0.01
+TURB_V                  : Constant
+
+VARVELHX                : 0.0
+VARVELH                 : 0.002
+VARVELVX                : 0.0
+VARVELV                 : 0.0002
+
+OLD                     : 0
+
+<<BeginProperty>>
+NAME                      : temperature
+UNITS                     : ?C
+CONCENTRATION             : 16
+EQUAL_TO_AMBIENT          : 1
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME                      : salinity
+UNITS                     : psu
+CONCENTRATION             : 36
+EQUAL_TO_AMBIENT          : 1
+<<EndProperty>>
+
+<EndOrigin>
+
+
+<BeginMeteoOcean>
+<<BeginProperty>>
+NAME : velocity U
+DESCRIPTION : velocity from operational models
+UNITS : m/s
+MASK_DIM : -99
+FILE_LIST_MODE : 0
+<<<BeginMeteoOceanFiles>>>
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220121_20220122/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220122_20220123/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220123_20220124/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220124_20220125/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220125_20220126/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220126_20220127/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220127_20220128/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220128_20220129/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220129_20220130/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220130_20220131/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220131_20220201/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220201_20220202/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220202_20220203/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220203_20220204/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220204_20220205/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220205_20220206/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220206_20220207/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220207_20220208/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220208_20220209/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220209_20220210/Hydrodynamic_2_Surface.hdf5
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+<<BeginProperty>>
+NAME : velocity V
+DESCRIPTION : velocity from operational models
+UNITS : m/s
+MASK_DIM : -99
+FILE_LIST_MODE : 0
+<<<BeginMeteoOceanFiles>>>
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220121_20220122/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220122_20220123/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220123_20220124/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220124_20220125/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220125_20220126/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220126_20220127/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220127_20220128/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220128_20220129/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220129_20220130/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220130_20220131/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220131_20220201/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220201_20220202/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220202_20220203/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220203_20220204/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220204_20220205/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220205_20220206/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220206_20220207/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220207_20220208/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220208_20220209/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220209_20220210/Hydrodynamic_2_Surface.hdf5
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+
+!<<BeginProperty>>
+NAME	: temperature
+DESCRIPTION : density from operational models
+UNITS	: oC
+MASK_DIM : 3
+FILE_LIST_MODE   : 0
+<<<BeginMeteoOceanFiles>>>
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220108_20220109/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220109_20220110/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220110_20220111/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220111_20220112/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220112_20220113/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220113_20220114/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220114_20220115/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220115_20220116/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220116_20220117/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220117_20220118/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220118_20220119/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220119_20220120/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220120_20220121/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220121_20220122/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220122_20220123/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220123_20220124/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220124_20220125/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220125_20220126/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220126_20220127/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220127_20220128/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220128_20220129/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220129_20220130/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220130_20220131/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220131_20220201/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220201_20220202/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220202_20220203/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220203_20220204/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220204_20220205/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220205_20220206/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220206_20220207/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220207_20220208/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220208_20220209/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220209_20220210/Hydrodynamic_2_Surface.hdf5
+<<<EndMeteoOceanFiles>>>
+!<<EndProperty>>
+
+!<<BeginProperty>>
+NAME	: salinity
+DESCRIPTION : density from operational models
+UNITS	: psu
+MASK_DIM : 3
+FILE_LIST_MODE   : 0
+<<<BeginMeteoOceanFiles>>>
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220108_20220109/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220109_20220110/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220110_20220111/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220111_20220112/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220112_20220113/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220113_20220114/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220114_20220115/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220115_20220116/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220116_20220117/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220117_20220118/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220118_20220119/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220119_20220120/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220120_20220121/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220121_20220122/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220122_20220123/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220123_20220124/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220124_20220125/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220125_20220126/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220126_20220127/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220127_20220128/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220128_20220129/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220129_20220130/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220130_20220131/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220131_20220201/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220201_20220202/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220202_20220203/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220203_20220204/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220204_20220205/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220205_20220206/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220206_20220207/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220207_20220208/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220208_20220209/Hydrodynamic_2_Surface.hdf5
+C:\Aplica_New\Hydrodynamic\CE_RN_1_36\Backup/20220209_20220210/Hydrodynamic_2_Surface.hdf5
+<<<EndMeteoOceanFiles>>>
+!<<EndProperty>>
+
+<<BeginProperty>>
+NAME	       : wave amplitude
+HDF_FIELD_NAME : significant wave height
+!FIELD_NAME  : significant_wave_height
+DESCRIPTION : wind wave conditions from operational models
+UNITS	    : m
+MASK_DIM : 2
+FILE_LIST_MODE   : 0
+<<<BeginMeteoOceanFiles>>>
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220121_20220122/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220122_20220123/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220123_20220124/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220124_20220125/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220125_20220126/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220126_20220127/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220127_20220128/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220128_20220129/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220129_20220130/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220130_20220131/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220131_20220201/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220201_20220202/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220202_20220203/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220203_20220204/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220204_20220205/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220205_20220206/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220206_20220207/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220207_20220208/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220208_20220209/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220209_20220210/CMEMS.hdf5
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME	    : wave period
+HDF_FIELD_NAME : mean wave period
+!FIELD_NAME  : mean_wave_period
+DESCRIPTION : wind wave conditions from operational models
+UNITS	    : s
+MASK_DIM : 2
+FILE_LIST_MODE   : 0
+<<<BeginMeteoOceanFiles>>>
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220121_20220122/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220122_20220123/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220123_20220124/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220124_20220125/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220125_20220126/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220126_20220127/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220127_20220128/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220128_20220129/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220129_20220130/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220130_20220131/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220131_20220201/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220201_20220202/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220202_20220203/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220203_20220204/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220204_20220205/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220205_20220206/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220206_20220207/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220207_20220208/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220208_20220209/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220209_20220210/CMEMS.hdf5
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME	    : wave direction
+HDF_FIELD_NAME : mean wave direction
+!FIELD_NAME  : mean_wave_direction
+DESCRIPTION : wind wave conditions from operational models
+UNITS	    : degrees
+MASK_DIM : 2
+FILE_LIST_MODE   : 0
+!ADDING_FACTOR         : 270.
+!MULTIPLYING_FACTOR : -1
+<<<BeginMeteoOceanFiles>>>
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220121_20220122/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220122_20220123/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220123_20220124/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220124_20220125/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220125_20220126/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220126_20220127/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220127_20220128/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220128_20220129/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220129_20220130/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220130_20220131/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220131_20220201/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220201_20220202/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220202_20220203/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220203_20220204/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220204_20220205/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220205_20220206/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220206_20220207/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220207_20220208/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220208_20220209/CMEMS.hdf5
+D:\CMEMS\GLOBAL_ANALYSIS_FORECAST_WAV_001_027\Backup/20220209_20220210/CMEMS.hdf5
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME : wind velocity X
+DESCRIPTION : wind from operational models
+UNITS : m/s
+MASK_DIM : -99
+FILE_LIST_MODE : 0
+<<<BeginMeteoOceanFiles>>>
+D:\GFS\Backup/20220121_20220122/gfs.hdf5
+D:\GFS\Backup/20220122_20220123/gfs.hdf5
+D:\GFS\Backup/20220123_20220124/gfs.hdf5
+D:\GFS\Backup/20220124_20220125/gfs.hdf5
+D:\GFS\Backup/20220125_20220126/gfs.hdf5
+D:\GFS\Backup/20220126_20220127/gfs.hdf5
+D:\GFS\Backup/20220127_20220128/gfs.hdf5
+D:\GFS\Backup/20220128_20220129/gfs.hdf5
+D:\GFS\Backup/20220129_20220130/gfs.hdf5
+D:\GFS\Backup/20220130_20220131/gfs.hdf5
+D:\GFS\Backup/20220131_20220201/gfs.hdf5
+D:\GFS\Backup/20220201_20220202/gfs.hdf5
+D:\GFS\Backup/20220202_20220203/gfs.hdf5
+D:\GFS\Backup/20220203_20220204/gfs.hdf5
+D:\GFS\Backup/20220204_20220205/gfs.hdf5
+D:\GFS\Backup/20220205_20220206/gfs.hdf5
+D:\GFS\Backup/20220206_20220207/gfs.hdf5
+D:\GFS\Backup/20220207_20220208/gfs.hdf5
+D:\GFS\Backup/20220208_20220209/gfs.hdf5
+D:\GFS\Backup/20220209_20220210/gfs.hdf5
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+<<BeginProperty>>
+NAME : wind velocity Y
+DESCRIPTION : wind from operational models
+UNITS : m/s
+MASK_DIM : -99
+FILE_LIST_MODE : 0
+<<<BeginMeteoOceanFiles>>>
+D:\GFS\Backup/20220121_20220122/gfs.hdf5
+D:\GFS\Backup/20220122_20220123/gfs.hdf5
+D:\GFS\Backup/20220123_20220124/gfs.hdf5
+D:\GFS\Backup/20220124_20220125/gfs.hdf5
+D:\GFS\Backup/20220125_20220126/gfs.hdf5
+D:\GFS\Backup/20220126_20220127/gfs.hdf5
+D:\GFS\Backup/20220127_20220128/gfs.hdf5
+D:\GFS\Backup/20220128_20220129/gfs.hdf5
+D:\GFS\Backup/20220129_20220130/gfs.hdf5
+D:\GFS\Backup/20220130_20220131/gfs.hdf5
+D:\GFS\Backup/20220131_20220201/gfs.hdf5
+D:\GFS\Backup/20220201_20220202/gfs.hdf5
+D:\GFS\Backup/20220202_20220203/gfs.hdf5
+D:\GFS\Backup/20220203_20220204/gfs.hdf5
+D:\GFS\Backup/20220204_20220205/gfs.hdf5
+D:\GFS\Backup/20220205_20220206/gfs.hdf5
+D:\GFS\Backup/20220206_20220207/gfs.hdf5
+D:\GFS\Backup/20220207_20220208/gfs.hdf5
+D:\GFS\Backup/20220208_20220209/gfs.hdf5
+D:\GFS\Backup/20220209_20220210/gfs.hdf5
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+<EndMeteoOcean>

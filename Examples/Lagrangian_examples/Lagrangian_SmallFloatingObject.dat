@@ -1,0 +1,65 @@
+TIME_SERIE                : 0
+OUTPUT_TIME               : 0 1800
+ASSOCIATE_BEACH_PROB      : 0
+DEFAULT_BEACHING_PROB     : 0.7
+BEACHING_LIMIT            : 5
+DT_PARTIC                 : 600
+OUTPUT_TRACER_INFO        : 0
+OUTPUT_ORIGIN_ENVELOPE    : 1
+COMPUTE_AVERAGE_POSITION  : 1
+OUTPUT_CONC               : 0
+OUTPUT_MAX_TRACER         : 0
+OUTPUT_MASS_TRACER        : 0
+COASTLINE_FILE            : C:\Users\HP\Documents\MOHID Studio\LagrangianWizard\Land.xy
+
+<BeginOrigin>
+ORIGIN_NAME               : spill origin 1
+OLD                       : 0
+EMISSION_SPATIAL          : Point
+EMISSION_TEMPORAL         : Instantaneous
+FLOAT                     : 1
+MOVEMENT                  : SullivanAllen
+VARVELHX                  : 0.0015
+VARVELH                   : 0.003
+TURB_V                    : Constant
+POSITION_COORDINATES      : -40.8346860558785 32.5534430014127
+DEPTH_CELLS               : 0
+POINT_VOLUME              : 1000
+NBR_PARTIC                : 300
+ACCIDENT_METHOD           : 1
+SURFACE_EMISSION          : 1
+DEPTH_FROM_FREE_SURFACE   : 0.5
+MAINTAIN_DEPTH            : 0
+ADVECTION                 : 1
+WINDCOEF                  : 0.03
+WINDDRIFTCORRECTION       : 1
+WINDDRIFTANGLE            : 0
+STOKES_DRIFT              : 1
+STOKES_DRIFT_METHOD       : LonguetHigginsDeep
+BEACHING                  : 0
+AREA_METHOD               : 3
+BOX_NUMBER                : 1
+IMMERSION_RATIO           : 50
+
+<<BeginProperty>>
+NAME                      : temperature
+UNITS                     : ?C
+CONCENTRATION             : 16
+EQUAL_TO_AMBIENT          : 1
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME                      : salinity
+UNITS                     : psu
+CONCENTRATION             : 36
+EQUAL_TO_AMBIENT          : 1
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME                      : floating object
+UNITS                     : m3
+CONCENTRATION             : 1
+EQUAL_TO_AMBIENT          : 0
+AMBIENT_CONC              : 0
+<<EndProperty>>
+<EndOrigin>

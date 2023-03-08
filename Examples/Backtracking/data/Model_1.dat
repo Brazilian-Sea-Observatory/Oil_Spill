@@ -1,0 +1,7 @@
+START : 2022 01 21 00 0 0
+END : 2022 02 10 00 0 0
+DT                        : 1200
+VARIABLEDT                : 0
+LAGRANGIAN                    : 1
+WAVES                         : 1
+BACKTRACKING              : 1

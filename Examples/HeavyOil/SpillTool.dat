@@ -1,0 +1,8 @@
+START       : 2022 01 09 00 0 0
+END         : 2022 02 10 0
+
+#Instantaneous/Continuous
+EMISSION_TEMPORAL       : Instantaneous
+
+#Lon/Lat
+POSITION_COORDINATES  : -35.97 -4.55

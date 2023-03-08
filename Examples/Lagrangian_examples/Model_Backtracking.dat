@@ -1,0 +1,11 @@
+START                     : 2021 5 20 0 0 0
+END                       : 2021 5 20 6 0 0
+VARIABLEDT                : 0
+DT                        : 1800
+MAXDT                     : 60
+GMTREFERENCE              : 0
+DT_PREDICTION_INTERVAL    : 60
+LAGRANGIAN                : 1
+WAVES                     : 1
+BACKTRACKING              : 1
+STOP_ON_BATHYMETRY_CHANGE : 0

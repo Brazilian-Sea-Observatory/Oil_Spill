@@ -1,0 +1,289 @@
+!   MOVING_ORIGIN            : 0/1                      [0]                     !Moving Origin
+!   (following 5 keywords are read if MOVING_ORIGIN = 1)
+!   MOVING_ORIGIN_FILE        : char                    []                      !FileName with Trajectory of origin
+!   MOVING_ORIGIN_UNITS        : char                   [Cells]                 !Time Serie given in meters or in cells
+!   MOVING_ORIGIN_COLUMN_X  : int                       []                      !Column to read X coordinate values 
+                                                                                !in Moving Origin file
+!   MOVING_ORIGIN_COLUMN_Y  : int                       []                      !Column to read Y coordinate values 
+                                                                                !in Moving Origin file
+!MOVING_ORIGIN_CLOUD_EMISSION:0/1                       [0]                     !Moving Origin Cloud Emission
+
+
+<BeginGeneralKeywords>
+OUTPUT_TIME     : 0 3600.
+DT_PARTIC     : 360
+THINWALLS_FILE      : ..\GeneralData\polygons\Land\linhadecostaprsc.xy
+!COASTLINE_FILE      : ..\..\GeneralData\polygons\Land\linhadecostaprsc.xy
+OUTPUT_TRACER_INFO : 0
+
+OUTPUT_ORIGIN_ENVELOPE  : 1
+COMPUTE_AVERAGE_POSITION : 1 
+
+OUTPUT_CONC           : 1
+OUTPUT_MAX_TRACER     : 1
+OUTPUT_MASS_TRACER    : 1
+OUTPUT_NETCDF         : 1   
+
+
+! Activates litter module
+LITTER_ON                      : 1
+
+<EndGeneralKeywords>
+
+
+<BeginLitter>
+! (in sec)
+AGE_TO_BEACH                   : 0.
+KILL_BEACH_LITTER              : 0
+
+<<BeginBeachArea>>
+NAME                           : Beaching area 1
+DESCRIPTION                    : Area where litter can beach
+FILENAME                       : ../GeneralData/polygons/Beaching/Mangue.xy
+
+COAST_TYPE                     : 1
+PROBABILITY                    : 0.7
+!AGE_LIMIT                      : 2592000. 
+<<EndBeachArea>>
+
+<<BeginBeachArea>>
+NAME                           : Beaching area 2
+DESCRIPTION                    : Area where litter can beach
+FILENAME                       : ../GeneralData/polygons/Beaching/Baixios.xy
+
+COAST_TYPE                     : 2
+PROBABILITY                    : 0.56
+!AGE_LIMIT                      : 2592000. 
+<<EndBeachArea>>
+<EndLitter>
+
+
+<BeginOrigin>
+GROUP_ID                : 1
+ORIGIN_NAME             : Point_1
+
+BEACHING   : 0
+
+NBR_PARTIC : 2000
+
+!MOVING_ORIGIN           : 1
+!MOVING_ORIGIN_FILE      : ..\..\GeneralData\Navio.dat
+!MOVING_ORIGIN_UNITS     : Cells              
+!MOVING_ORIGIN_COLUMN_X  : 2                      
+!MOVING_ORIGIN_COLUMN_Y  : 3 
+
+!EMISSION_SPATIAL        : Point
+EMISSION_SPATIAL        : Accident
+
+ACCIDENT_METHOD         : 1
+!1 - Grid cells, 2 - Voronoi area , 3 - Fay analytical evolution
+AREA_METHOD             : 2            
+
+POSITION_COORDINATES : -48.5456 -25.4984
+
+EMISSION_TEMPORAL : Instantaneous
+
+START_PARTIC_EMIT : 2022 08 01 00 0 0
+STOP_PARTIC_EMIT : 2022 08 02 00 0 0
+
+FLOAT                   : 0
+
+DEPTH_FROM_FREE_SURFACE : 0.
+ADVECTION               : 1
+
+
+!WINDCOEF                : 0.03
+!WINDDRIFTCORRECTION     : 1
+!WINDDRIFTANGLE          : 45
+WINDDRIFTANGLE          : 0
+
+!STOKES_DRIFT            : 1
+!STOKES_DRIFT_METHOD     : LonguetHigginsDeep
+
+POINT_VOLUME            : 500.
+!FLOW                    : 1.
+
+MOVEMENT                : SullivanAllen
+
+VARVELH                 : 0.002
+VARVELV                 : 0.0002
+
+TURB_V                  : Constant
+
+OLD                     : 0
+
+<<BeginProperty>>
+NAME                      : temperature
+UNITS                     : ?C
+CONCENTRATION             : 16
+EQUAL_TO_AMBIENT          : 1
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME                      : salinity
+UNITS                     : psu
+CONCENTRATION             : 36
+EQUAL_TO_AMBIENT          : 1
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME                      : oil
+UNITS                     : m3
+CONCENTRATION             : 1e6
+EQUAL_TO_AMBIENT          : 0
+AMBIENT_CONC              : 0
+<<EndProperty>>
+
+<<BeginOil>>
+!DT_OIL_INTPROCESSES       : 60
+!DT_OUTPUT_TIME            : 60
+OIL_BEACHING              : 1
+OIL_SPREADING             : 1
+SPREADINGMETHOD           : Fay
+OIL_EVAPORATION           : 1
+EVAPORATIONMETHOD         : EvaporativeExposure
+OIL_DISPERSION            : 1
+DISPERSIONMETHOD          : Mackay
+DROPLETS_D50              : 5E-06
+METHOD_BW_DROPLETS_DIAMETER :  1
+METHOD_FLOAT_VEL          : 3
+OIL_EMULSIFICATION        : 1
+EMULSIFICATIONMETHOD      : Mackay
+OIL_DISSOLUTION           : 1
+OIL_SEDIMENTATION         : 1
+OILTYPE                   : Crude
+!API                       : 13
+API                       : 19
+POURPOINT                 : -30
+MAXVWATERCONTENT          : 80
+WAXCONTENT                : 0
+RESINCONTENT              : -999
+SATURATECONTENT           : -999
+ASPHALTENECONTENT         : -999
+EMULSPARAMETER            : 0
+VISCREF                   : 3603
+VISCCINREF                : 3582.65695479991
+TEMPVISCREF               : 15
+OWINTERFACIALTENSION      : 20
+OIL_TIMESERIE             : Default TS
+<<EndOil>>
+
+<EndOrigin>
+
+<BeginMeteoOcean>
+<<BeginProperty>>
+NAME : velocity U
+DESCRIPTION : velocity from operational models
+UNITS : m/s
+MASK_DIM : -99
+FILE_LIST_MODE : 0
+<<<BeginMeteoOceanFiles>>>
+D:\MOHID\CEP\Backup\Level_1\20220801_20220802\Hydrodynamic_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220802_20220803\Hydrodynamic_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220803_20220804\Hydrodynamic_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220804_20220805\Hydrodynamic_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220805_20220806\Hydrodynamic_2.hdf5
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+<<BeginProperty>>
+NAME : velocity V
+DESCRIPTION : velocity from operational models
+UNITS : m/s
+MASK_DIM : -99
+FILE_LIST_MODE : 0
+<<<BeginMeteoOceanFiles>>>
+D:\MOHID\CEP\Backup\Level_1\20220801_20220802\Hydrodynamic_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220802_20220803\Hydrodynamic_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220803_20220804\Hydrodynamic_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220804_20220805\Hydrodynamic_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220805_20220806\Hydrodynamic_2.hdf5
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME	: temperature
+DESCRIPTION : density from operational models
+UNITS	: oC
+MASK_DIM : 3
+FILE_LIST_MODE   : 0
+<<<BeginMeteoOceanFiles>>>
+D:\MOHID\CEP\Backup\Level_1\20220801_20220802\WaterProperties_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220802_20220803\WaterProperties_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220803_20220804\WaterProperties_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220804_20220805\WaterProperties_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220805_20220806\WaterProperties_2.hdf5
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME	: salinity
+DESCRIPTION : density from operational models
+UNITS	: psu
+MASK_DIM : 3
+FILE_LIST_MODE   : 0
+<<<BeginMeteoOceanFiles>>>
+D:\MOHID\CEP\Backup\Level_1\20220801_20220802\WaterProperties_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220802_20220803\WaterProperties_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220803_20220804\WaterProperties_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220804_20220805\WaterProperties_2.hdf5
+D:\MOHID\CEP\Backup\Level_1\20220805_20220806\WaterProperties_2.hdf5
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME	       : wave amplitude
+HDF_FIELD_NAME : significant wave height
+!FIELD_NAME  : significant_wave_height
+DESCRIPTION : wind wave conditions from operational models
+UNITS	    : m
+MASK_DIM : 2
+FILE_LIST_MODE   : 0
+<<<BeginMeteoOceanFiles>>>
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME	    : wave period
+HDF_FIELD_NAME : mean wave period
+!FIELD_NAME  : mean_wave_period
+DESCRIPTION : wind wave conditions from operational models
+UNITS	    : s
+MASK_DIM : 2
+FILE_LIST_MODE   : 0
+<<<BeginMeteoOceanFiles>>>
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME	    : wave direction
+HDF_FIELD_NAME : mean wave direction
+!FIELD_NAME  : mean_wave_direction
+DESCRIPTION : wind wave conditions from operational models
+UNITS	    : degrees
+MASK_DIM : 2
+FILE_LIST_MODE   : 0
+!ADDING_FACTOR         : 270.
+!MULTIPLYING_FACTOR : -1
+<<<BeginMeteoOceanFiles>>>
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME : wind velocity X
+DESCRIPTION : wind from operational models
+UNITS : m/s
+MASK_DIM : -99
+FILE_LIST_MODE : 0
+<<<BeginMeteoOceanFiles>>>
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+<<BeginProperty>>
+NAME : wind velocity Y
+DESCRIPTION : wind from operational models
+UNITS : m/s
+MASK_DIM : -99
+FILE_LIST_MODE : 0
+<<<BeginMeteoOceanFiles>>>
+<<<EndMeteoOceanFiles>>>
+<<EndProperty>>
+<EndMeteoOcean>

@@ -1,0 +1,91 @@
+TIME_SERIE                : 0
+OUTPUT_TIME               : 0 1800
+ASSOCIATE_BEACH_PROB      : 0
+DEFAULT_BEACHING_PROB     : 0.7
+BEACHING_LIMIT            : 5
+DT_PARTIC                 : 600
+OUTPUT_TRACER_INFO        : 0
+OUTPUT_ORIGIN_ENVELOPE    : 1
+COMPUTE_AVERAGE_POSITION  : 1
+OUTPUT_CONC               : 0
+OUTPUT_MAX_TRACER         : 0
+OUTPUT_MASS_TRACER        : 0
+COASTLINE_FILE            : C:\Users\HP\Documents\MOHID Studio\LagrangianWizard\Land.xy
+
+<BeginOrigin>
+ORIGIN_NAME               : spill origin 1
+OLD                       : 0
+EMISSION_SPATIAL          : Point
+EMISSION_TEMPORAL         : Continuous
+START_PARTIC_EMIT         : 2021 5 20 0 0 0
+STOP_PARTIC_EMIT          : 1 1 1 0 0 0
+FLOAT                     : 0
+MOVEMENT                  : SullivanAllen
+VARVELHX                  : 0.0015
+VARVELH                   : 0.003
+TURB_V                    : Constant
+POSITION_COORDINATES      : -79.114203964218 10.2335458382933
+DEPTH_CELLS               : 0
+DT_EMIT                   : 5
+FLOW                      : 0.5
+NBR_PARTIC                : 10
+ACCIDENT_METHOD           : 1
+SURFACE_EMISSION          : 1
+DEPTH_FROM_FREE_SURFACE   : 0.5
+MAINTAIN_DEPTH            : 0
+ADVECTION                 : 1
+WINDCOEF                  : 0.03
+WINDDRIFTCORRECTION       : 1
+WINDDRIFTANGLE            : 0
+STOKES_DRIFT              : 1
+STOKES_DRIFT_METHOD       : LonguetHigginsDeep
+BEACHING                  : 0
+AREA_METHOD               : 3
+BOX_NUMBER                : 1
+METHOD_BW_DROPLETS_DIAMETER :  3
+
+<<BeginProperty>>
+NAME                      : temperature
+UNITS                     : ?C
+CONCENTRATION             : 16
+EQUAL_TO_AMBIENT          : 1
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME                      : salinity
+UNITS                     : psu
+CONCENTRATION             : 36
+EQUAL_TO_AMBIENT          : 1
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME                      : hns
+UNITS                     : m3
+CONCENTRATION             : 1
+EQUAL_TO_AMBIENT          : 0
+AMBIENT_CONC              : 0
+<<EndProperty>>
+
+<<BeginHNS>>
+DT_HNS_INTPROCESSES       : 60
+HNS_SPREADING             : 1
+HNS_EVAPORATION           : 1
+HNS_ENTRAINMENT           : 1
+HNS_DISSOLUTION           : 1
+HNS_VOLATILIZATION        : 1
+HNS_SEDIMENTATION         : 1
+HNS_DEGRADATION           : 1
+ORGANIC_COMPOUND          : 1
+DENSITY                   : 1014.7
+VISCOSITY                 : 24
+MOLECULARWEIGHT           : 61.098
+VAPORPRESSURE             : 34.66
+HNSWINTERFACIALTENSION    : -999
+WATERSOLUBILITY           : 0
+OWPARTITIONCOEF           : -1.31
+AIR_DEGRADATIONRATE       : 0
+WATER_DEGRADATIONRATE     : 0
+SEDIMENT_DEGRADATIONRATE  : 0
+<<EndHNS>>
+
+<EndOrigin>

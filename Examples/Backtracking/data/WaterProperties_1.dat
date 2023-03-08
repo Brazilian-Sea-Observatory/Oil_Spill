@@ -1,0 +1,43 @@
+OUTPUT_TIME               : 0 3600
+
+<beginproperty>
+NAME                      : salinity
+UNITS                     : psu
+DESCRIPTION               : salinity
+INITIALIZATION_METHOD     : CONSTANT
+FILE_IN_TIME              : NONE
+DEFAULTVALUE              : 36
+REMAIN_CONSTANT           : 1
+ADVECTION_DIFFUSION       : 0
+DISCHARGES                : 0
+TIME_SERIE                : 0
+OUTPUT_HDF                : 0
+<endproperty>
+
+<beginproperty>
+NAME                      : temperature
+UNITS                     : ?C
+DESCRIPTION               : temperature
+INITIALIZATION_METHOD     : CONSTANT
+FILE_IN_TIME              : NONE
+DEFAULTVALUE              : 16
+REMAIN_CONSTANT           : 1
+ADVECTION_DIFFUSION       : 0
+DISCHARGES                : 0
+TIME_SERIE                : 0
+OUTPUT_HDF                : 0
+<endproperty>
+
+<beginproperty>
+NAME                      : cohesive sediment
+UNITS                     : mg/L
+DESCRIPTION               : cohesive sediment
+INITIALIZATION_METHOD     : CONSTANT
+FILE_IN_TIME              : NONE
+DEFAULTVALUE              : 5
+REMAIN_CONSTANT           : 1
+ADVECTION_DIFFUSION       : 0
+DISCHARGES                : 0
+TIME_SERIE                : 0
+OUTPUT_HDF                : 0
+<endproperty>

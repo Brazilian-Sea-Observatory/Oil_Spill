@@ -1,0 +1,152 @@
+ -------------------------- MOHID -------------------------
+ 
+       AUTHOR   : IST/MARETEC, Marine Modelling Group      
+       WWW      : http://www.mohid.com
+ 
+ 
+ Copyright (C) 1985, 1998, 2002, 2006.
+ Instituto Superior Tecnico, Technical University of Lisbon
+ -------------------------- MOHID -------------------------
+ 
+ Constructing Mohid Water
+ Please Wait...
+ -------------------------- MODEL -------------------------
+ 
+ Constructing      : ..
+ ID                :            1
+ ---------------------- HYDRODYNAMICS ---------------------
+ 
+ Courant Number is :    3.15301892852309     
+ In Grid Cell[i,j] :            1          42
+ 
+ --------------------- WATERPROPERTIES --------------------
+ 
+ Num of Properties :            3
+ 
+ Property            : salinity
+ ---Water Quality    :  F
+ ---CEQUALW2         :  F
+ ---Life             :  F
+ ---MacroAlgae       :  F
+ ---Seagrasses       :  F
+ ---WWTPQ            :  F
+ ---Bivalve          :  F
+ ---Partitioning     :  F
+ ---Free Vert. Mov   :  F
+ ---Adv. Diff.       :  F
+ ---Discharges       :  F
+ ---Surface Fluxes   :  F
+ ---Bottom Fluxes    :  F
+ ---First Order Decay:  F
+ ---Decay Rate Property:  F
+ ---Assimilation     :            0
+ 
+ Property            : temperature
+ ---Water Quality    :  F
+ ---CEQUALW2         :  F
+ ---Life             :  F
+ ---MacroAlgae       :  F
+ ---Seagrasses       :  F
+ ---WWTPQ            :  F
+ ---Bivalve          :  F
+ ---Partitioning     :  F
+ ---Free Vert. Mov   :  F
+ ---Adv. Diff.       :  F
+ ---Discharges       :  F
+ ---Surface Fluxes   :  F
+ ---Bottom Fluxes    :  F
+ ---First Order Decay:  F
+ ---Decay Rate Property:  F
+ ---Assimilation     :            0
+ 
+ Property            : cohesive sediment
+ ---Water Quality    :  F
+ ---CEQUALW2         :  F
+ ---Life             :  F
+ ---MacroAlgae       :  F
+ ---Seagrasses       :  F
+ ---WWTPQ            :  F
+ ---Bivalve          :  F
+ ---Partitioning     :  F
+ ---Free Vert. Mov   :  F
+ ---Adv. Diff.       :  F
+ ---Discharges       :  F
+ ---Surface Fluxes   :  F
+ ---Bottom Fluxes    :  F
+ ---First Order Decay:  F
+ ---Decay Rate Property:  F
+ ---Assimilation     :            0
+ 
+ 
+ Filename =../GeneralData/Solutions/Brasil/20210707_20210708/CMEMS.hdf5
+ Last instant in file lower than simulation ending time
+ Matrix name: velocity U
+ 
+ Filename =../GeneralData/Solutions/Brasil/20210707_20210708/CMEMS.hdf5
+ Last instant in file lower than simulation ending time
+ Matrix name: velocity V
+ ----------------------- LAGRANGIAN -----------------------
+ 
+ Number of Origins :            1
+ Number of Groups  :            1
+ 
+ GroupID           :            1
+ ---Number of Orig.:            1
+ 
+ Origin            : Spill
+ ---Group ID       :            1
+ ---Number of Part.:          100
+ ---Number of Prop.:            2
+ 
+ ---------------- INTERFACE SEDIMENT-WATER -----------------
+ 
+ Num of Properties :            0
+ 
+ 
+ Atmosphere DT Prediction Method:  1
+ 
+ -------------------------- MOHID -------------------------
+ 
+ Running MOHID, please wait...
+ 
+ -------------------------- MOHID -------------------------
+ 
+ Shuting down MOHID, please wait...
+ 
+ -----Current Simulation Instant---------------------------
+ Time Instant           : 2021: 7: 8: 0: 0: 0
+ 
+ -----CPU Time---------------------------------------------
+ Elapsed                :           55s
+ Remaining (aprox.)     :            0s
+ Completed (%)          :       100.0000
+ Coeficient CPU / Model :         0.0006
+ Seconds per Iteration  :         2.3266s
+ -----System Time------------------------------------------
+ System time            : 2021: 8:16: 9:50:33
+ End of the run         : 2021: 8:16: 9:50:33
+
+
+
+
+
+
+ -------------------------- MOHID -------------------------
+ 
+ Program Mohid Water successfully terminated
+ 
+ 
+ Total Elapsed Time     :         230.22   0h  3min 50s
+
+ Total CPU time         :         228.50
+
+ CPU usage (%)          :          99.25
+
+ Workcycle Elapsed Time :          55.91
+
+ Workcycle CPU time     :          54.50
+
+ Workcycle CPU usage (%):          97.48
+
+ 
+ ----------------------------------------------------------

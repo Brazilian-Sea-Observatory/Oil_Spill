@@ -1,0 +1,97 @@
+TIME_SERIE                : 0
+OUTPUT_TIME               : 0 1800
+ASSOCIATE_BEACH_PROB      : 0
+DEFAULT_BEACHING_PROB     : 0.7
+BEACHING_LIMIT            : 5
+DT_PARTIC                 : 600
+OUTPUT_TRACER_INFO        : 0
+OUTPUT_ORIGIN_ENVELOPE    : 1
+COMPUTE_AVERAGE_POSITION  : 1
+OUTPUT_CONC               : 0
+OUTPUT_MAX_TRACER         : 0
+OUTPUT_MASS_TRACER        : 0
+COASTLINE_FILE            : C:\Users\HP\Documents\MOHID Studio\LagrangianWizard\Land.xy
+
+<BeginOrigin>
+ORIGIN_NAME               : spill origin 1
+OLD                       : 0
+EMISSION_SPATIAL          : Accident
+EMISSION_TEMPORAL         : Instantaneous
+FLOAT                     : 1
+MOVEMENT                  : SullivanAllen
+VARVELHX                  : 0.0015
+VARVELH                   : 0.003
+TURB_V                    : Constant
+POSITION_COORDINATES      : -42.1579436607616 -28.2059013700191
+DEPTH_CELLS               : 0
+POINT_VOLUME              : 1000
+NBR_PARTIC                : 300
+ACCIDENT_METHOD           : 1
+SURFACE_EMISSION          : 1
+DEPTH_FROM_FREE_SURFACE   : 0.5
+MAINTAIN_DEPTH            : 0
+ADVECTION                 : 1
+WINDCOEF                  : 0.03
+WINDDRIFTCORRECTION       : 1
+WINDDRIFTANGLE            : 0
+STOKES_DRIFT              : 1
+STOKES_DRIFT_METHOD       : LonguetHigginsDeep
+BEACHING                  : 0
+AREA_METHOD               : 3
+BOX_NUMBER                : 1
+
+<<BeginProperty>>
+NAME                      : temperature
+UNITS                     : ?C
+CONCENTRATION             : 16
+EQUAL_TO_AMBIENT          : 1
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME                      : salinity
+UNITS                     : psu
+CONCENTRATION             : 36
+EQUAL_TO_AMBIENT          : 1
+<<EndProperty>>
+
+<<BeginProperty>>
+NAME                      : oil
+UNITS                     : m3
+CONCENTRATION             : 1
+EQUAL_TO_AMBIENT          : 0
+AMBIENT_CONC              : 0
+<<EndProperty>>
+
+<<BeginOil>>
+DT_OIL_INTPROCESSES       : 60
+DT_OUTPUT_TIME            : 60
+OIL_SPREADING             : 1
+SPREADINGMETHOD           : Fay
+OIL_EVAPORATION           : 1
+EVAPORATIONMETHOD         : EvaporativeExposure
+OIL_DISPERSION            : 1
+DISPERSIONMETHOD          : Mackay
+DROPLETS_D50              : 5E-06
+METHOD_BW_DROPLETS_DIAMETER :  1
+METHOD_FLOAT_VEL          : 3
+OIL_EMULSIFICATION        : 1
+EMULSIFICATIONMETHOD      : Mackay
+OIL_DISSOLUTION           : 1
+OIL_SEDIMENTATION         : 1
+OILTYPE                   : Crude
+API                       : 40
+POURPOINT                 : -30
+MAXVWATERCONTENT          : 30
+WAXCONTENT                : 0
+RESINCONTENT              : -999
+SATURATECONTENT           : -999
+ASPHALTENECONTENT         : -999
+EMULSPARAMETER            : 0
+VISCREF                   : 8
+VISCCINREF                : 9.44120065647999
+TEMPVISCREF               : 15
+OWINTERFACIALTENSION      : 26
+OIL_TIMESERIE             : Default TS
+<<EndOil>>
+
+<EndOrigin>

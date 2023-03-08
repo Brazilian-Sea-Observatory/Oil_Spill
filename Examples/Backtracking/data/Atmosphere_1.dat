@@ -1,0 +1,20 @@
+
+
+!OVERRIDE_WIND_VEL_STANDARD : 1
+
+<beginproperty>
+NAME                    : wind velocity
+UNITS                   : m/s
+DESCRIPTION             : wind velocity
+DEFAULTVALUE            : 0.0 0.0
+REMAIN_CONSTANT         : 1
+<endproperty>
+
+<beginproperty>
+NAME                    : atmospheric pressure
+UNITS                   : Pa
+DESCRIPTION             : Meteo-IST Mean Sea Level Pressure
+DEFAULTVALUE            : 0.
+OUTPUT_HDF              : 1
+TIME_SERIE              : 0
+<endproperty>
